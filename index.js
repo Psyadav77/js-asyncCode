@@ -3,6 +3,7 @@ import './style.css';
 
 // Write Javascript code!
 //callback is a function that when we are going to call when the result async operation is ready
+//A callback function is a function that is passed as an argument to another function, to be “called back” at a later time. A function that accepts other functions as arguments is called a higher-order function, which contains the logic for when the callback function gets executed.
 
 console.log('Before');
 getUser(1, function callback(user) {
@@ -10,7 +11,6 @@ getUser(1, function callback(user) {
   getRepo(user.userName, (repo) => {
     console.log(repo);
   });
-
 });
 //get the Repositories
 
