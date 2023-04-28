@@ -20,6 +20,7 @@ console.log('Before');
 //   //console.log(user);
 //   getRepo(user.userName, (repo) => {
 //     console.log(repo);
+
 //   });
 // });
 
@@ -32,7 +33,7 @@ console.log('Before');
 getUser(1)
   .then((user) => getRepo(user.userName))
   .then((getRepo) => console.log(getRepo))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err.message));
 
 //get the Repositories
 
