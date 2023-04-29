@@ -14,10 +14,7 @@ The json() method of the Response interface takes a Response stream and reads it
 
 function getCountry(country) {
   fetch(`https://restcountries.com/v3.1/name/${country}`)
-    .then((result) => {
-      console.log(result);
-      return result.json();
-    })
+    .then((result) => result.json(),error=>alert(error))
     .then((data) => {
       console.log(data[0]);
       console.log(data[0].region);
@@ -26,9 +23,9 @@ function getCountry(country) {
       const neighber = data[0].borders[0];
       if (!neighber) return;
       return fetch(`https://restcountries.com/v3.1/name/${neighber}`);
-      
+
     })
-    .then((response) => response.json())
+    .then((response) => response.json(),error=>alert(error))
     .then((data) => {
       console.log(data[0].region);
       console.log('Border ', data[0].borders[0]);
